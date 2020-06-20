@@ -14,6 +14,11 @@ Line number begins from 0 for this model, for example line number 0 corresponds 
 <script>
 ```
 ```javascript
+// Quran text to detect chapter and verse No, you can specify any verse text here to test this code
+// This is chapter 31 ,verse 14
+var text1 = "And We have enjoined upon man [care] for his parents. His mother carried him, [increasing her] in weakness upon weakness, and his weaning is in two years. Be grateful to Me and to your parents; to Me is the [final] destination."
+// This is chapter 112 ,verse 1
+var text2 = "Say, He is Allah, [who is] One"
 // It will take some time to load the above scripts, the total size of this model(including the above script and model)is around 32mb
 console.log("Please wait the model is loading")
 // Loading quran verse detection model
@@ -26,11 +31,6 @@ async function run(){
 var quranmodel = await model1
 var usemodel = await model2
 
-// Quran text to detect chapter and verse No, you can specify any verse text here to test this code
-// This is chapter 31 ,verse 14
-var text1 = "And We have enjoined upon man [care] for his parents. His mother carried him, [increasing her] in weakness upon weakness, and his weaning is in two years. Be grateful to Me and to your parents; to Me is the [final] destination."
-// This is chapter 112 ,verse 1
-var text2 = "Say, He is Allah, [who is] One"
 // Embedding the text into numbers, so that model can understand
 var embed = await usemodel.embed([text1,text2])
 // predicting
