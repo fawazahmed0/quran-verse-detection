@@ -73,8 +73,11 @@ run()
 **Output in console:**
 
     Please wait the model is loading
+	
     Line Number of verse in quran of text1 and text2: [3482, 6221]
+	
     Probability of prediction of text1 and text2: [0.9999980926513672, 0.9985342025756836]
+	
     chapter and verse No of text1 and text2: [31, 14] [112, 1]
 
 
