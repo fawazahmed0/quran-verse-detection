@@ -3,6 +3,8 @@ Give any verse and it will tell the specific chapter and Verse No
 
 This is a TensorflowJS model, which can be used in browser to detect the chapter and Verse No of a given verse. This model depends on  [Universal Sentence Encoder Lite Model](https://tfhub.dev/tensorflow/tfjs-model/universal-sentence-encoder-lite/1/default/1 "Sentence Encoder Lite Model") 
 It will output the specific line the specific verse it corresponds to and we can use that line number to get the chapter No and verse No
+**Note:** 
+Line number begins from 0 for this model, for example line number 0 corresponds to chapter 1, verse 1
 
 **Example([Link](https://codepen.io/fawazahmed0/pen/oNbZbRb?editors=1111 "link")):**
 ```html
