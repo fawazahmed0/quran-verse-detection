@@ -1,18 +1,21 @@
 # quran-verse-detection
+
 Give any verse and it will tell the specific Chapter and Verse No of Quran
 
 This is a TensorflowJS model, which can be used in browser to detect the chapter and Verse No of a given english verse. This model depends on  [Universal Sentence Encoder Lite Model](https://tfhub.dev/tensorflow/tfjs-model/universal-sentence-encoder-lite/1/default/1 "Sentence Encoder Lite Model") .
 It will output the specific line the specific verse it corresponds to and we can use that line number to get the chapter No and verse No
 
-**Note:** 
+**Note:**
 Line number begins from 0 for this model, for example line number 0 corresponds to chapter 1, verse 1
 
 **Example([Link](https://codepen.io/fawazahmed0/pen/oNbZbRb?editors=1111 "link")):**
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
 <script>
 ```
+
 ```javascript
 // Quran text to detect chapter and verse No, you can specify any verse text here to test this code
 // This is chapter 31 ,verse 14
@@ -68,6 +71,7 @@ console.log("chapter and verse No of text1 and text2:", mappings[arr[0]],mapping
 // Calling run function
 run()
 ```
+
 ```html
 </script>
 ```
@@ -75,12 +79,9 @@ run()
 **Output in console:**
 
     Please wait the model is loading
-	
+
     Line Number of verse in quran of text1 and text2: [3482, 6221]
-	
+
     Probability of prediction of text1 and text2: [0.9999980926513672, 0.9985342025756836]
-	
+
     chapter and verse No of text1 and text2: [31, 14] [112, 1]
-
-
-

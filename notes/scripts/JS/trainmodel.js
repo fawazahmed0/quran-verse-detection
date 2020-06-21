@@ -22,11 +22,11 @@ targetArr = []
 
 
 buffer = fs.readFileSync('./testfilenew')
-dataArr = JSON.parse(buffer)  // Embedded data
+dataArr = JSON.parse(buffer) // Embedded data
 
-for (i=0;i< dataArr.length/datalenght;i++){
+for (i = 0; i < dataArr.length / datalenght; i++) {
 
-targetArr = targetArr.concat(oneArr)
+  targetArr = targetArr.concat(oneArr)
 }
 // Shuffling data
 
@@ -35,9 +35,9 @@ var randomorder = tf.util.createShuffledIndices(dataArr.length);
 shuffledata = []
 shuffletarget = []
 
-for (i=0;i<dataArr.length;i++){
-shuffledata[i] = dataArr[randomorder[i]]
-shuffletarget[i] = targetArr[randomorder[i]]
+for (i = 0; i < dataArr.length; i++) {
+  shuffledata[i] = dataArr[randomorder[i]]
+  shuffletarget[i] = targetArr[randomorder[i]]
 }
 
 dataArr = shuffledata
@@ -45,21 +45,21 @@ targetArr = shuffletarget
 
 fulldatalength = dataArr.length
 
-test_data=dataArr.splice(0,0.15*fulldatalength)
+test_data = dataArr.splice(0, 0.15 * fulldatalength)
 train_data = dataArr
-console.log("dataArr shape: ",dataArr.length,dataArr[0].length)
+console.log("dataArr shape: ", dataArr.length, dataArr[0].length)
 // This is not required, I can just feed the arrays also, but then during prediction time, I will have to convert the tensor to array and then feed the value
 // So training with tensor might be better
-test_data  = tf.tensor(test_data)
+test_data = tf.tensor(test_data)
 train_data = tf.tensor(dataArr)
 
 
-test_target= targetArr.splice(0,0.15*fulldatalength)
-train_target= targetArr
-console.log("targetArr shape: ",targetArr.length,targetArr[0].length)
+test_target = targetArr.splice(0, 0.15 * fulldatalength)
+train_target = targetArr
+console.log("targetArr shape: ", targetArr.length, targetArr[0].length)
 //just debugging
-test_target= tf.tensor(test_target)
-train_target= tf.tensor(train_target)
+test_target = tf.tensor(test_target)
+train_target = tf.tensor(train_target)
 // See inputShape
 
 var model = tf.sequential();
@@ -75,16 +75,16 @@ model.add(tf.layers.dense({
 */
 model.add(tf.layers.dense({
   inputShape: [512],
-    activation: 'relu',
-    units: 320,
+  activation: 'relu',
+  units: 320,
 }));
 
 
 
 model.add(tf.layers.dense({
-//  inputShape: [6236],
-activation: 'softmax',
-    units: 6236
+  //  inputShape: [6236],
+  activation: 'softmax',
+  units: 6236
 }));
 
 
@@ -96,24 +96,30 @@ model.compile({
 });
 model.summary()
 var batch = 256
-function runner(){
+
+function runner() {
 
   model.fit(train_data, train_target, {
       batchSize: batch,
       epochs: 12,
-      verbose:1,
+      verbose: 1,
       validationSplit: 0.1764,
-//      shuffle: true,
-      callbacks: tf.callbacks.earlyStopping({monitor: 'val_loss',patience:5 })
+      //      shuffle: true,
+      callbacks: tf.callbacks.earlyStopping({
+        monitor: 'val_loss',
+        patience: 5
+      })
     }).then(() => {
-  result = model.evaluate(test_data,test_target, { batchSize:batch})
-  console.log("result is ",result.toString())
-  //, {verbose:2, batchSize:5000}
-  saveResults =  model.save('file://./model-1a')
-  return saveResults
-})
-.then(console.log)
-.catch(console.error)
+      result = model.evaluate(test_data, test_target, {
+        batchSize: batch
+      })
+      console.log("result is ", result.toString())
+      //, {verbose:2, batchSize:5000}
+      saveResults = model.save('file://./model-1a')
+      return saveResults
+    })
+    .then(console.log)
+    .catch(console.error)
 
 }
 runner()
