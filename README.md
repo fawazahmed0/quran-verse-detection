@@ -1,4 +1,13 @@
-# quran-verse-detection
+<h1 align="center">Quran Verse Detection </h1>
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/fawazahmed0/quran-verse-detection/raw/master/image.png">
+</p>
+
+
+**In the name of God, who have guided me to do this work and I seek refuge in him, sufficient is God as protector**
+
+
 
 A Simple Program, which takes quranic verse as input and outputs the chapter & verse No
 
