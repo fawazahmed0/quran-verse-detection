@@ -94,3 +94,6 @@ run()
     Probability of prediction of text1 and text2: [0.9999980926513672, 0.9985342025756836]
 
     chapter and verse No of text1 and text2: [31, 14] [112, 1]
+
+**Share:**
+Please share this repo with your family & friends and Star this repo by clicking on [:star: button](#) above [:arrow_upper_right:](#):<br>
