@@ -95,5 +95,6 @@ run()
 
     chapter and verse No of text1 and text2: [31, 14] [112, 1]
 
-**Share:**
+**Share:**<br>
+
 Please share this repo with your family & friends and Star this repo by clicking on [:star: button](#) above [:arrow_upper_right:](#):<br>
