@@ -1,0 +1,4 @@
+https://colab.research.google.com/notebooks/gpu.ipynb
+
+Navigate to Edit→Notebook Settings
+select GPU from the Hardware Accelerator drop-down

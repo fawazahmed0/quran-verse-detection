@@ -1,0 +1,95 @@
+import json
+from urllib.request import urlopen
+import pandas as pd
+import tensorflow as tf
+import tensorflow_hub as hub
+
+
+
+
+
+jsonurl = urlopen('https://api.alquran.cloud/v1/quran/en.yusufali')
+data = json.loads(jsonurl.read())
+
+jsonurl = urlopen('https://api.alquran.cloud/v1/quran/en.sahih')
+datasahih = json.loads(jsonurl.read())
+
+jsonurl = urlopen('https://api.alquran.cloud/v1/quran/en.pickthall')
+datapick = json.loads(jsonurl.read())
+
+jsonurl = urlopen('https://api.alquran.cloud/v1/quran/en.hilali')
+datahilali = json.loads(jsonurl.read())
+
+
+
+dict = {}
+testdict = {}
+#try:
+#    print(data['data']['surahs'][0]['ayahs'][5]['text'])
+#except:
+#    print(1)
+
+target = []
+text = []
+
+testtext = []
+testtarget = []
+
+count = 0
+for i in range(114):
+    for j in range(len(data['data']['surahs'][i]['ayahs'])):
+        #print(data['data']['surahs'][i]['ayahs'][j]['text'])
+        #target.append(str(i+1)+" "+str(j+1))
+        target.append(count)
+        target.append(count)
+        target.append(count)
+        testtarget.append(count)
+        count+=1
+        text.append(data['data']['surahs'][i]['ayahs'][j]['text'])
+        text.append(datasahih['data']['surahs'][i]['ayahs'][j]['text'])
+        text.append(datapick['data']['surahs'][i]['ayahs'][j]['text'])
+        testtext.append(datahilali['data']['surahs'][i]['ayahs'][j]['text'])
+
+dict['text'] = text
+dict['target'] = target
+
+testdict['text'] = testtext
+testdict['target'] = testtarget
+
+df = pd.DataFrame(dict)
+
+testdf  = pd.DataFrame(testdict)
+
+#print(df)
+#print(df.dtypes)
+target = df.pop('target')
+
+testtarget = testdf.pop('target')
+
+print(target.tail(5))
+dataset = tf.data.Dataset.from_tensor_slices((df.values, target.values))
+
+testdataset = tf.data.Dataset.from_tensor_slices((testdf.values, testtarget.values))
+#print(dataset)
+train_dataset = dataset.shuffle(len(df)).batch(1)
+
+embedding = "https://tfhub.dev/google/tf2-preview/nnlm-en-dim128/1"
+hub_layer = hub.KerasLayer(embedding, input_shape=[],
+                           dtype=tf.string, trainable=True)
+
+model = tf.keras.Sequential()
+model.add(hub_layer)
+model.add(tf.keras.layers.Dense(1, activation='relu'))
+model.add(tf.keras.layers.Dense(6236))
+
+#model.summary()
+
+
+
+
+model.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
+
+model.fit(train_dataset, epochs=15)
+model.evaluate(testdataset.batch(1), verbose=2)

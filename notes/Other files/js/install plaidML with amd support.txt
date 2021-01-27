@@ -1,0 +1,11 @@
+https://plaidml.github.io/plaidml/docs/install#windows
+
+pip install -U plaidml-keras
+plaidml-setup
+
+select amd option for faster speed
+
+benchmark using
+
+pip install plaidml-keras plaidbench
+plaidbench keras mobilenet

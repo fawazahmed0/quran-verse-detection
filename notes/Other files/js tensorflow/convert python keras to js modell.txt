@@ -1,0 +1,7 @@
+use tensorflowjs_wizard
+https://github.com/tensorflow/tfjs/tree/master/tfjs-converter
+
+
+graph model is used only for inference and the result prediction is faster as compared to layerd model using which we can fit
+
+https://stackoverflow.com/questions/59182682/what-is-the-difference-between-tensorflow-js-layers-model-and-graph-model

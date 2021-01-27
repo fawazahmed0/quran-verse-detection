@@ -1,0 +1,10 @@
+Refer:
+
+https://classic.yarnpkg.com/en/docs/cli/autoclean/
+https://docs.npmjs.com/cli-commands/cache.html
+
+yarn autoclean --init
+yarn autoclean --force
+yarn cache clean
+npm cache clean --force  (This seems to solve the problem)
+

@@ -1,0 +1,20 @@
+Node is faster than browser, as it use c++ api bindings to run
+
+Install nodejs
+install python 2.7 and make it as default in env path for some time (required for next step to work)
+Ref for more info: https://www.npmjs.com/package/@tensorflow/tfjs-node
+yarn add @tensorflow/tfjs @tensorflow/tfjs-node @tensorflow-models/universal-sentence-encoder
+
+After done installing packages, you can change the python back to 3 in env variables path (it's better to keep python 2 in path until you are done with coding, because installing new tensorflow-node packages may require the python 2 in path)
+
+In script you can add:
+
+use = require('@tensorflow-models/universal-sentence-encoder');
+tf = require('@tensorflow/tfjs');
+# The below line is added to get the fast c++ api
+require('@tensorflow/tfjs-node');
+
+
+run the scrpt using: node scriptname.js
+
+If you have nvidia gpu(which is supported by tensorflow), install tensorflow/tfjs-node-gpu version instead of tensorflow/tfjs-node

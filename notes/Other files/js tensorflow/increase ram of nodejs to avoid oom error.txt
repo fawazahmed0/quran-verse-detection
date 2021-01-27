@@ -1,0 +1,6 @@
+node --max-old-space-size=8192 yourFile.js
+
+or set env var for one session
+set NODE_OPTIONS="--max-old-space-size=8192"
+
+https://stackoverflow.com/questions/38558989/node-js-heap-out-of-memory
