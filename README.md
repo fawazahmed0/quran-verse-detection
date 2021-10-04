@@ -17,7 +17,10 @@ It will output the specific line the specific verse it corresponds to and we can
 **Note:**
 Line number begins from 0 for this model, for example line number 0 corresponds to chapter 1, verse 1
 
-**Example([Link](https://codepen.io/fawazahmed0/pen/oNbZbRb?editors=1111 "link")):**
+**Live Demo:** [here](https://fawazahmed0.github.io/quran-verse-detection/)
+
+
+**Example([codepen](https://codepen.io/fawazahmed0/pen/oNbZbRb?editors=1111 "link")):**
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
@@ -94,6 +97,9 @@ run()
     Probability of prediction of text1 and text2: [0.9999980926513672, 0.9985342025756836]
 
     chapter and verse No of text1 and text2: [31, 14] [112, 1]
+    
+**Contributions:**<br>
+Thanks to Rogério Araújo ( @rodgeraraujo )  for adding [live demo](https://github.com/fawazahmed0/quran-verse-detection/pull/3)
 
 **Share:**<br>
 
