@@ -1,7 +1,7 @@
 const template = `
   <section>
       <div class="demo-input">
-        <input v-model="text1" class="" type="email" placeholder="Verse 1?" />
+        <input v-model="text1" class="" type="text" placeholder="Enter quran verse here" />
       </div>
 
 
