@@ -1,0 +1,138 @@
+/* ==================================================== Recreating the email field from https://webflow.com/cms. Just an experiment - not as cross-browser friendly as the original. Changed: - animated gradient bar to :after element - flexbox for layout ==================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  display: flex;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+}
+input {
+  border-style: none;
+  background: transparent;
+  outline: none;
+}
+button {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+}
+
+body > main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+section label {
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+section button {
+  padding: 8px 14px 8px 14px;
+  width: 400px;
+  border: none;
+  border-radius: 4px;
+  background-color: #9caed4;
+}
+
+section button:hover {
+  background-color: #8697bb;
+}
+
+section button:active {
+  background-color: #7d9ada;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #7d9ada;
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #637294;
+}
+
+table, td, th {
+  border: 1px solid #9badd4;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+}

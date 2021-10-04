@@ -1,0 +1,118 @@
+p {
+  font-size: 18px;
+}
+
+p, .demo-output {
+  color: #abb5cc;
+}
+
+h1.demo {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+  color: #f5f6ff;
+}
+a.demo {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: rgba(202, 205, 239, 0.8);
+  margin-bottom: 3rem;
+}
+.demo-flex-spacer {
+  flex-grow: 1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1600px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.demo-input {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);
+}
+
+.demo-input, .demo-input2 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 11px auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);
+}
+
+.demo-input:after, .demo-input2:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+  background-size: 500% auto;
+  animation: gradient 3s linear infinite;
+}
+.demo-input input, .demo-input2 input {
+  flex-grow: 1;
+  color: #bfd2ff;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+}
+.demo-input input::-webkit-input-placeholder {
+  color: #7881a1;
+}
+.demo-input button {
+  color: #7881a1;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  transition: color 0.25s;
+}
+.demo-input button:hover {
+  color: #bfd2ff;
+}
+
+.demo-button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.4rem 2rem 1.6rem;
+}
+
+label {
+  display: inline-block;
+  width: 10em;
+}
+input {
+  width: 10em;
+}
