@@ -4,9 +4,7 @@ const template = `
         <input v-model="text1" class="" type="email" placeholder="Verse 1?" />
       </div>
 
-      <div class="demo-input2">
-        <input v-model="text2" class="" type="email" placeholder="Verse 2?" />
-      </div>
+
 
       <div class="demo-button">
         <button @click="detect()" >Send ➜</button>
@@ -20,19 +18,12 @@ const template = `
         <p><strong>Results:</strong></p>
         <table>
           <tr>
-            <th>Verse</th>
             <th>Chapter</th>
             <th>Verse number</th>
           </tr>
           <tr>
-            <td>verse 1</td>
             <td>{{ result.text1.chapter }}</td>
             <td>{{ result.text1.verse_number }}</td>
-          </tr>
-          <tr>
-            <td>verse 2</td>
-            <td>{{ result.text2.chapter }}</td>
-            <td>{{ result.text2.verse_number }}</td>
           </tr>
         </table>
       </label>
@@ -57,7 +48,7 @@ export default {
 
   methods: {
     async detect() {
-      if (this.text1 === '' || this.text2 === '') {
+      if (this.text1 === '') {
         return;
       }
 
@@ -97,10 +88,6 @@ export default {
         text1: {
           chapter: mappings[arr[0]][0],
           verse_number: mappings[arr[0]][1],
-        },
-        text2: {
-          chapter: mappings[arr[1]][0],
-          verse_number: mappings[arr[1]][1],
         },
       };
 
