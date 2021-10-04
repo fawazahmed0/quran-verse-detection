@@ -17,7 +17,7 @@ It will output the specific line the specific verse it corresponds to and we can
 **Note:**
 Line number begins from 0 for this model, for example line number 0 corresponds to chapter 1, verse 1
 
-**Live Demo:** [here](https://fawazahmed0.github.io/quran-verse-detection/)
+**Live Demo: [here](https://fawazahmed0.github.io/quran-verse-detection/)**
 
 
 **Example([codepen](https://codepen.io/fawazahmed0/pen/oNbZbRb?editors=1111 "link")):**
