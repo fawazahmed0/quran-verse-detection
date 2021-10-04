@@ -1,0 +1,23 @@
+footer {
+  flex: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #353a50;
+  color: white;
+  padding: 8px;
+  font-size: 12px;
+}
+
+footer .left {
+  flex: 0;
+  white-space: nowrap;
+}
+
+footer .middle {
+  flex: 1;
+}
+
+footer .right {
+  flex: 0;
+  white-space: nowrap;
+}
