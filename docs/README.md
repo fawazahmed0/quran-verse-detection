@@ -4,7 +4,7 @@
 
 First, run the command below:
 ```sh
-npx http-server demo/
+npx http-server docs -S -C cert.pem
 ```
 
 You will see the message:
