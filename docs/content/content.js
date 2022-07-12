@@ -58,8 +58,13 @@ export default {
       await this.quranVerseDetection();
     },
     async quranVerseDetection() {
-      const quranmodel = await this.model1;
-      const usemodel = await this.model2;
+      if (this.model1 instanceof Promise)
+      this.model1 = await this.model1;
+      if (this.model2 instanceof Promise)
+      this.model2 = await this.model2;
+      
+      const quranmodel = this.model1;
+      const usemodel = this.model2;
 
       const embed = await usemodel.embed([this.text1, this.text2]);
       const predictions = quranmodel.predict(embed).softmax();
