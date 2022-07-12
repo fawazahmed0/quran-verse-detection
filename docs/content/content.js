@@ -43,6 +43,8 @@ export default {
       text1: '',
       text2: '',
       result: null,
+      model1:tf.loadLayersModel(MODEL_URL),
+      model2:use.load()
     };
   },
 
@@ -56,11 +58,8 @@ export default {
       await this.quranVerseDetection();
     },
     async quranVerseDetection() {
-      const model1 = tf.loadLayersModel(MODEL_URL);
-      const model2 = use.load();
-
-      const quranmodel = await model1;
-      const usemodel = await model2;
+      const quranmodel = await this.model1;
+      const usemodel = await this.model2;
 
       const embed = await usemodel.embed([this.text1, this.text2]);
       const predictions = quranmodel.predict(embed).softmax();
