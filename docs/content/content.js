@@ -31,9 +31,6 @@ const template = `
   </section>
 `;
 
-const MODEL_URL =
-  'https://cdn.jsdelivr.net/gh/fawazahmed0/quran-verse-detection@master/model/model.json';
-
 export default {
   template,
 
@@ -42,9 +39,7 @@ export default {
       loading: false,
       text1: '',
       text2: '',
-      result: null,
-      model1:tf.loadLayersModel(MODEL_URL),
-      model2:use.load()
+      result: null
     };
   },
 
@@ -58,8 +53,15 @@ export default {
       await this.quranVerseDetection();
     },
     async quranVerseDetection() {
-      const quranmodel = await this.model1;
-      const usemodel = await this.model2;
+      if(window.model1 instanceof Promise)
+      window.model1 = await window.model1;
+
+      if(window.model2 instanceof Promise)
+      window.model2 = await window.model2;
+
+
+      const quranmodel = window.model1;
+      const usemodel = window.model2;
 
       const embed = await usemodel.embed([this.text1, this.text2]);
       const predictions = quranmodel.predict(embed).softmax();

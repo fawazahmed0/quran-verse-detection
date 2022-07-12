@@ -4,6 +4,11 @@ import Footer from './footer/footer.js';
 
 const { createApp } = Vue;
 
+window.model1 =  tf.loadLayersModel('https://cdn.jsdelivr.net/gh/fawazahmed0/quran-verse-detection@master/model/model.json')
+window.model2 =  use.load()
+
+
+
 const app = createApp({
   components: {
     'app-header': Header,
