@@ -98,7 +98,7 @@ run()
 
     chapter and verse No of text1 and text2: [31, 14] [112, 1]
     
-**Data:**
+**Data:**<br>
 For quran translation data, you can use [quran-api](https://github.com/fawazahmed0/quran-api)
 
 **Contributions:**<br>
