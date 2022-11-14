@@ -102,7 +102,7 @@ run()
 For quran translation data, you can use [quran-api](https://github.com/fawazahmed0/quran-api)
 
 **Contributions:**<br>
-Thanks to Rogério Araújo ( @rodgeraraujo )  for adding [live demo](https://github.com/fawazahmed0/quran-verse-detection/pull/3)
+Thanks to [Rogério Araújo](https://github.com/rodgeraraujo) for adding [live demo](https://github.com/fawazahmed0/quran-verse-detection/pull/3)
 
 **Share:**<br>
 
